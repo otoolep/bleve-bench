@@ -1,0 +1,5 @@
+bench
+**/bench
+
+# vim temp files
+*.swp
