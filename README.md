@@ -1,4 +1,4 @@
-bleve-bench
+bleve-bench [![Circle CI](https://circleci.com/gh/otoolep/bleve-bench/tree/master.svg?style=svg)](https://circleci.com/gh/otoolep/bleve-bench/tree/master)
 ======
 
 *Detailed background on this code can be found on [this blog post](http://www.philipotoole.com/increasing-bleve-performance-sharding/).*
