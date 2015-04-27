@@ -14,7 +14,7 @@ Download and run bleve-bench like so (tested on 64-bit Kubuntu 14.04):
     cd bleve-bench/
     export GOPATH=$PWD
     go get -v github.com/otoolep/bleve-bench
-    go build github.com/otoolep/bleve-bench/cmd/bench/.
+    go install github.com/otoolep/bleve-bench/cmd/bench/.
     $GOPATH/bin/bench -h
 
 Executing the last command will show the various options. An example run is shown below.
