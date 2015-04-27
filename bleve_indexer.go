@@ -67,9 +67,9 @@ func (i *Indexer) Index(docs [][]byte) error {
 			// Just index whole batches.
 			for n = 0; n < len(ds)-(len(ds)%i.batchSz); n++ {
 				data := struct {
-					D []byte
+					Body string
 				}{
-					D: ds[n],
+					Body: string(ds[n]),
 				}
 
 				if err := batch.Index(strconv.Itoa(n), data); err != nil {
@@ -107,7 +107,7 @@ func mapping() *bleve.IndexMapping {
 	articleMapping := bleve.NewDocumentMapping()
 
 	// body
-	articleMapping.AddFieldMappingsAt("body", standardJustIndexed)
+	articleMapping.AddFieldMappingsAt("Body", standardJustIndexed)
 
 	indexMapping := bleve.NewIndexMapping()
 	indexMapping.DefaultMapping = articleMapping
