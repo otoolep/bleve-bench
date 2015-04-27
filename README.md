@@ -26,6 +26,8 @@ Executing the last command will show the various options. An example run is show
     Indexing operation took 3.479690221s
     100000 documents indexed.
     Indexing rate: 28738 docs/sec.
+    
+Each line in the test data file is read and indexed as a distinct document. Any previously indexed data is deleted before indexing begins.
 
 
 
