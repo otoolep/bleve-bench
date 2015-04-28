@@ -39,10 +39,13 @@ func main() {
 
 	// Read the lines into memory.
 	docs := make([][]byte, 0, 100000)
-	scanner := bufio.NewScanner(f)
-	for scanner.Scan() {
-		l := scanner.Text()
-		docs = append(docs, []byte(l))
+	reader := bufio.NewReader(f)
+
+	var l []byte
+	l, err = reader.ReadBytes(byte('\n'))
+	for err == nil {
+		docs = append(docs, l)
+		l, err = reader.ReadBytes(byte('\n'))
 	}
 	fmt.Printf("%d documents read for indexing.\n", len(docs))
 
